@@ -89,6 +89,8 @@ class TagAnalyzer
         $homeContent = Cache::remember("home_content", 60 * 60 * 24, function () {
             if (is_integer(strpos("http", request("home_url"))))
                 return file_get_contents(request("home_url"));
+            elseif (is_integer(strpos("https", request("home_url"))))
+                return file_get_contents(request("home_url"));
             else
                 return file_get_contents("https://" . request("home_url"));
 
