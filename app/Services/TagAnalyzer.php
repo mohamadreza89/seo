@@ -68,7 +68,7 @@ class TagAnalyzer
         });
 
         if (in_array($tag, $this->tags)) {
-            return is_integer(strpos($homeContent, $tag));
+            return is_integer(strpos($homeContent, "<".$tag));
         }
 
         if (in_array($tag, $this->services)) {
@@ -81,7 +81,7 @@ class TagAnalyzer
 
 
 
-        return true;
+        return false;
     }
 
     public function value($meta)
