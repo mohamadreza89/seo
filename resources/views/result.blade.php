@@ -28,11 +28,13 @@
                     @else
                 <div class="container">
                     <div class="col-md-4"><h5>{{ucwords(str_replace("-"," ",$head))}}</h5></div>
-                    <div class="col-md-4"><h5>{{TagAnalyzer::check($head)? '✅': '❎'}}</h5></div>
-                    @if(!is_bool(TagAnalyzer::check($head)))
-                    <div class="col-md-4"><h5>{{TagAnalyzer::check($head)}}</h5></div>
+                    @if(TagAnalyzer::check($head))
+                        <div style="color: green;" class="col-md-4"><h5 style="font-weight: bold; font-size: 1.7em">✓</h5></div>
+                    @else
+                        <div style="color: red;" class="col-md-4"><h5 style="font-weight: bold; font-size: 1.7em">✗</h5></div>
+
                     @endif
-                    <div class="col-md-4"><h5>❎</h5></div>
+                    <div style="color: red;" class="col-md-4"><h5 style="font-weight: bold; font-size: 1.7em">✗</h5></div>
                 </div>
                 @endif
             @endforeach
