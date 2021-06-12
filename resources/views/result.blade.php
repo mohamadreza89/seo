@@ -11,6 +11,8 @@
 </head>
 <body>
 <div class="s002">
+    <div>
+        <a style="text-decoration: none; color: white;" href="{{url("/")}}"><h1>Seo Check</h1></a>
     <div class="text-center container " style="background-color: #FFFA; border-radius: 10px;">
         <div class="col-sm-12 col-md-12">
             <h2>The Results</h2>
@@ -49,6 +51,7 @@
                     </div>
             @endforeach
         </div>
+    </div>
     </div>
 </div>
 <script src="{{asset('js/extention/choices.js')}}"></script>
